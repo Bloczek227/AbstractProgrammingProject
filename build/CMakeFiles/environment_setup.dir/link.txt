@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wbuiltin-macro-redefined -pedantic -Werror CMakeFiles/environment_setup.dir/main.cpp.o -o environment_setup  /usr/local/lib/libboost_filesystem.a 
