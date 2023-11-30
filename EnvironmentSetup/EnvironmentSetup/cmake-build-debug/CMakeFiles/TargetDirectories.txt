@@ -1,0 +1,3 @@
+/home/daniel/CLionProjects/environment_setup/cmake-build-debug/CMakeFiles/environment_setup.dir
+/home/daniel/CLionProjects/environment_setup/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/daniel/CLionProjects/environment_setup/cmake-build-debug/CMakeFiles/rebuild_cache.dir
