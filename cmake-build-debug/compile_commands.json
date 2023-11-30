@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/daniel/CLionProjects/environment_setup/cmake-build-debug",
-  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -I/home/daniel/CLionProjects/environment_setup  -Wall -Wbuiltin-macro-redefined -pedantic -Werror -g -std=c++17 -fdiagnostics-color=always -o CMakeFiles/environment_setup.dir/main.cpp.o -c /home/daniel/CLionProjects/environment_setup/main.cpp",
-  "file": "/home/daniel/CLionProjects/environment_setup/main.cpp",
-  "output": "CMakeFiles/environment_setup.dir/main.cpp.o"
-}
-]
