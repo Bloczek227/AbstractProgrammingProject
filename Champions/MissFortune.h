@@ -35,6 +35,7 @@ public:
 
     static double BonusAttackSpeed(){return AttackSpeedGrowth*(lv-1)*(0.685+lv*0.0175)+eq::template ItemsStatValue<AttackSpeed>()+
                                             (25+15*WPoints)*(W::WTicksLeft>0);}
+    static double TotalAttackSpeed(){return BaseAttackSpeed+AttackSpeedRatio*BonusAttackSpeed()/100;}
     constexpr static double calculatePassiveModifier(){return Level<4?0.5:Level<7?0.6:Level<9?0.7:Level<11?0.8:Level<13?0.9:1;}
 
     class BasicAttack:public ChampionSkill{
@@ -136,7 +137,6 @@ public:
             RTicksLeft=0;
         }
     };
-
 
 
     using WaitTick=ChampionSkillSum<ChampionSkillSum<typename W::WaitTick,typename E::WaitTick>,typename R::WaitTick>;
