@@ -35,6 +35,7 @@ int main(){
     using Equipment3=Equipment<DoransBlade,InfinityEdge>;
     using Equipment4=Equipment<DoransBlade,YoumuusGhostblade,LongSword,LongSword>;
     using Equipment5=Equipment<DoransBlade,TheCollector,LongSword>;
+    using Equipment6=Equipment<DoransBlade,NavoriQuickblades>;
 
     std::cout<<"Kraken Slayer build"<<std::endl;
     test<Equipment1>();
@@ -46,5 +47,7 @@ int main(){
     test<Equipment4>();
     std::cout<<"Collector build"<<std::endl;
     test<Equipment5>();
+    std::cout<<"Navori build"<<std::endl;
+    test<Equipment6>();
     return 0;
 }
