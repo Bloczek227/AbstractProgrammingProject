@@ -143,6 +143,9 @@ public:
     static void reset(){
         CurrentHP=Super::TotalHP();
         Passive::used=false;
+        W::WTicksLeft=0;
+        E::ETicksLeft=0;
+        R::RTicksLeft=0;
         Equipment::template reset<MissFortune<Level,Equipment,Points>>();
     }
 };
