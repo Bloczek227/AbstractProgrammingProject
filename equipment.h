@@ -8,6 +8,7 @@
 template<ItemConcept...Items>
 class Equipment{
 public:
+    constexpr static double cost=0;
     template<StatConcept Stat>
     static double ItemsStatValue(){return Stat::baseValue;}
     template<ChampionConcept OffensiveChamp>
@@ -18,6 +19,7 @@ public:
 template<ItemConcept FirstItem,ItemConcept... NextItems>
 class Equipment<FirstItem,NextItems...>{
 public:
+    constexpr static double cost=FirstItem::cost+Equipment<NextItems...>::cost;
     template<StatConcept Stat>
     static double ItemsStatValue(){return Stat::StackingMethod(FirstItem::template StatValue<Stat>(),Equipment<NextItems...>::template ItemsStatValue<Stat>());}
     template<ChampionConcept OffensiveChamp>

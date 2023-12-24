@@ -1,19 +1,19 @@
-#ifndef PA_PROJ_LONGSWORD_H
-#define PA_PROJ_LONGSWORD_H
-
+#ifndef PA_PROJ_DORANSBLADE_H
+#define PA_PROJ_DORANSBLADE_H
 
 #include "../stats.h"
 #include "../skill.h"
 #include "../item.h"
 
-class LongSword: public Item{
+class DoransBlade: public Item{
 public:
-    constexpr static double cost=350;
+    constexpr static double cost=450;
     template<StatConcept Stat> static double StatValue(){return Stat::baseValue;};
     template<ChampionConcept OffensiveChamp>
     using SkillType=ZeroSkill<OffensiveChamp>;
     template<ChampionConcept OffensiveChamp> static void reset(){}
 };
-template<> double LongSword::StatValue<AD>(){return 10;}
+template<> double DoransBlade::StatValue<AD>(){return 10;}
+template<> double DoransBlade::StatValue<HP>(){return 100;}
 
-#endif //PA_PROJ_LONGSWORD_H
+#endif //PA_PROJ_DORANSBLADE_H

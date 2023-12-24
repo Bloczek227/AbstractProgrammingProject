@@ -17,6 +17,8 @@ concept ChampionConcept=requires{
     T::ArmorGrowth;
     T::BaseMRLv1;
     T::MRGrowth;
+    T::IsRanged;
+    T::CurrentHP;
 };
 
 template<typename T>
@@ -31,7 +33,10 @@ concept SkillConcept=std::derived_from<T,Skill>;
 template<typename T>
 concept ChampionSkillConcept=std::derived_from<T,ChampionSkill>;
 template<typename T>
-concept ItemConcept=std::derived_from<T,Item>;
+concept ItemConcept=requires{
+    std::derived_from<T,Item>;
+    T::cost;
+};
 
 
 #endif //PA_PROJ_CONCEPTS_H

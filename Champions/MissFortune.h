@@ -29,6 +29,8 @@ public:
     constexpr static double ArmorGrowth=4.2;
     constexpr static double BaseMRLv1=30;
     constexpr static double MRGrowth=1.3;
+    constexpr static bool IsRanged=true;
+
     static double CurrentHP;
 
     static double BonusAttackSpeed(){return AttackSpeedGrowth*(lv-1)*(0.685+lv*0.0175)+eq::template ItemsStatValue<AttackSpeed>()+

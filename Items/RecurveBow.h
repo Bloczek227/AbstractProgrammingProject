@@ -14,6 +14,7 @@ public:
 
 class RecurveBow: public Item{
 public:
+    constexpr static double cost=700;
     template<StatConcept Stat> static double StatValue(){return Stat::baseValue;};
     template<ChampionConcept OffensiveChamp>
     using SkillType=RecurveBowPassive<OffensiveChamp>;
