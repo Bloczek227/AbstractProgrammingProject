@@ -1,7 +1,6 @@
 #ifndef PA_PROJ_LONGSWORD_H
 #define PA_PROJ_LONGSWORD_H
 
-
 #include "../stats.h"
 #include "../skill.h"
 #include "../item.h"
