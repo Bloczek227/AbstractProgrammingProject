@@ -1,3 +1,3 @@
 League of Legends damage calculator
 
-Patch - 14.1
+Patch - 14.1b
