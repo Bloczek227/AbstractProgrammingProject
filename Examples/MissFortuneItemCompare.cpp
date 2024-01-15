@@ -7,7 +7,7 @@
 
 template<typename Eq>
 void test(){
-    using MissFortune=MissFortune<8,Eq,Points<4,1,2,1>>;
+    using MissFortune=MissFortune<8,Eq,Points<4,2,1,1>>;
     using DefendingTwitch=Twitch<8,Equipment<DoransBlade,KrakenSlayer>,Points<2,1,4,1>>;
     using fight=Fight<MissFortune,DefendingTwitch>;
     std::cout<<"Cost: "<<MissFortune::eq::cost<<std::endl;

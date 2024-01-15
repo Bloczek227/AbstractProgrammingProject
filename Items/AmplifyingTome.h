@@ -7,7 +7,7 @@
 
 class AmplifyingTome: public Item{
 public:
-    constexpr static double cost=435;
+    constexpr static double cost=400;
     template<StatConcept Stat> static double StatValue(){return Stat::baseValue;};
     template<ChampionConcept OffensiveChamp>
     using SkillType=ZeroSkill<OffensiveChamp>;

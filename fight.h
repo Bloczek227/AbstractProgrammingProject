@@ -4,28 +4,28 @@
 #include "concepts.h"
 #include "skill.h"
 
-template<class Fight,SkillConcept ChampionSkill,int Ticks>
+template<class Fight,SkillConcept Skill,int Ticks>
 class WaitTicks{
 public:
     static void tick(){
-        using result=Fight::off::WaitTick;
-        double flatDamage=result::template PhysDamage<typename Fight::def,ChampionSkill>()*
-                          ((Fight::def::TotalArmor()*(1-Fight::off::TotalArmorPenetration()/100)-Fight::off::TotalLethality()>0)?
+        using result=SkillSum<typename Fight::off::WaitTick,typename Fight::off::eq::template WaitTick<typename Fight::off>>;
+        double flatDamage= result::template PhysDamage<typename Fight::def,Skill>() *
+                           ((Fight::def::TotalArmor()*(1-Fight::off::TotalArmorPenetration()/100)-Fight::off::TotalLethality()>0)?
                            (100/(100+Fight::def::TotalArmor()*(1-Fight::off::TotalArmorPenetration()/100)-Fight::off::TotalLethality())):
                            (2-100/(100-Fight::def::TotalArmor()*(1-Fight::off::TotalArmorPenetration()/100)+Fight::off::TotalLethality())))+
-                          result::template MagicDamage<typename Fight::def,ChampionSkill>()*
-                          ((Fight::def::TotalMR()*(1-Fight::off::TotalPercentageMagicPenetration()/100)-Fight::off::TotalFlatMagicPenetration()>0)?
+                           result::template MagicDamage<typename Fight::def,Skill>() *
+                           ((Fight::def::TotalMR()*(1-Fight::off::TotalPercentageMagicPenetration()/100)-Fight::off::TotalFlatMagicPenetration()>0)?
                            (100/(100+Fight::def::TotalMR()*(1-Fight::off::TotalPercentageMagicPenetration()/100)-Fight::off::TotalFlatMagicPenetration())):
                            1)+
-                          result::template TrueDamage<typename Fight::def,ChampionSkill>();
+                          result::template TrueDamage<typename Fight::def,Skill>();
         Fight::def::CurrentHP-=flatDamage;
         Fight::def::CurrentHP=Fight::def::CurrentHP>0?Fight::def::CurrentHP:0;
-        result::template use<typename Fight::def,ChampionSkill>();
-        WaitTicks<Fight,ChampionSkill,Ticks-1>::tick();
+        result::template use<typename Fight::def,Skill>();
+        WaitTicks<Fight,Skill, Ticks - 1>::tick();
     }
 };
-template<class Fight, SkillConcept ChampionSkill>
-class WaitTicks<Fight,ChampionSkill,0> {
+template<class Fight, SkillConcept Skill>
+class WaitTicks<Fight,Skill,0> {
 public:
     static void tick(){};
 };

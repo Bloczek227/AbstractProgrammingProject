@@ -8,7 +8,7 @@
 template<typename Eq>
 void test(){
     using Twitch=Twitch<8,Eq,Points<2,1,4,1>>;
-    using DefendingMissFortune=MissFortune<8,Equipment<DoransBlade,KrakenSlayer>,Points<4,1,2,1>>;
+    using DefendingMissFortune=MissFortune<8,Equipment<DoransBlade,KrakenSlayer>,Points<4,2,1,1>>;
     using fight=Fight<Twitch,DefendingMissFortune>;
     std::cout<<"Cost: "<<Twitch::eq::cost<<std::endl;
     fight::template UseSkill<typename Twitch::Q>();

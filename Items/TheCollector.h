@@ -20,7 +20,7 @@ public:
 
 class TheCollector: public Item{
 public:
-    constexpr static double cost=3000;
+    constexpr static double cost=3100;
     template<StatConcept Stat> static double StatValue(){return Stat::baseValue;};
     template<ChampionConcept OffensiveChamp>
     using SkillType=ZeroSkill<OffensiveChamp>;

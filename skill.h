@@ -21,6 +21,7 @@ class ChampionSkill:public Skill{
 public:
     constexpr static bool onHit=false;
     constexpr static bool onAttack=false;
+    constexpr static bool ability=false;
 };
 
 template<ChampionConcept OffensiveChamp>

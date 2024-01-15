@@ -13,7 +13,8 @@ template<ChampionConcept OffensiveChamp>
 class BladeOfTheRuinedKingPassive:public ItemSkill<OffensiveChamp>{
 public:
     template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
-    static double PhysDamage(){return ChampionSkill::onHit*(OffensiveChamp::IsRanged?0.09:0.12)*DefendingChamp::CurrentHP;}
+    static double PhysDamage(){return (ChampionSkill::onHit*(OffensiveChamp::IsRanged?0.09:0.12)*DefendingChamp::CurrentHP)>15?
+                                      (ChampionSkill::onHit*(OffensiveChamp::IsRanged?0.09:0.12)*DefendingChamp::CurrentHP):15;}
 };
 
 class BladeOfTheRuinedKing: public Item{

@@ -40,8 +40,8 @@ public:
 
     class BasicAttack:public ChampionSkill{
     public:
-        constexpr static bool onHit=true;
         constexpr static bool onAttack=true;
+        constexpr static bool onHit=true;
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
         static double PhysDamage(){return Super::TotalAD()*(1+Super::TotalCriticalChance()/100*Super::TotalCriticalBonusDamage()/100)+Passive::PhysDamage();}
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
@@ -62,8 +62,9 @@ public:
     template<int UseMethod=0>
     class Q:public ChampionSkill{
     public:
-        constexpr static bool onHit=true;
+        constexpr static bool ability=true;
         constexpr static bool onAttack=true;
+        constexpr static bool onHit=true;
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
         static double PhysDamage(){
             return (20+25*QPoints+1.0*Super::TotalAD()+0.35*Super::TotalAP()+Passive::PhysDamage())*
@@ -79,6 +80,7 @@ public:
 
     class W:public ChampionSkill{
     public:
+        constexpr static bool ability=true;
         static int WTicksLeft;
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
         static void use(){
@@ -95,6 +97,7 @@ public:
 
     class E:public ChampionSkill{
     public:
+        constexpr static bool ability=true;
         static int ETicksLeft;
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill,int Ticks=2*TicksPerSecond>
         static void use(){
@@ -116,6 +119,7 @@ public:
 
     class R:public ChampionSkill{
     public:
+        constexpr static bool ability=true;
         static int RTicksLeft;
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
         static void use(){
