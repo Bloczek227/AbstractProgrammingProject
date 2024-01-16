@@ -51,3 +51,38 @@ int main(){
     test<Equipment6>();
     return 0;
 }
+
+/*
+Output:
+
+Kraken Slayer build
+Cost: 3800
+Short combo damage:     464.438
+Long combo damage:      931.669
+
+BoTRK build
+Cost: 3650
+Short combo damage:     530.301
+Long combo damage:      975.929
+
+Infinity Edge build
+Cost: 3750
+Short combo damage:     492.616
+Long combo damage:      1008.58
+
+Youmuu's build
+Cost: 3850
+Short combo damage:     471.065
+Long combo damage:      1067.72
+
+Collector build
+Cost: 3900
+Short combo damage:     470.944
+Long combo damage:      1046.76
+
+Navori build
+Cost: 3750
+Short combo damage:     412.187
+Long combo damage:      906.798
+
+ */

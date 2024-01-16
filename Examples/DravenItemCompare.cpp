@@ -56,3 +56,44 @@ int main(){
     test<Equipment9>();
     return 0;
 }
+
+/*
+Output:
+
+Kraken Slayer build
+Cost: 3800
+Combo damage:   934.979
+
+Trinity build
+Cost: 3783
+Combo damage:   962.467
+
+Infinity Edge build
+Cost: 3750
+Combo damage:   917.983
+
+Youmuu's build
+Cost: 3850
+Combo damage:   1047.52
+
+Collector build
+Cost: 3900
+Combo damage:   1028.89
+
+Essence Reaver build
+Cost: 3700
+Combo damage:   1066.04
+
+Eclipse build
+Cost: 3600
+Combo damage:   958.811
+
+Umbral Glave build
+Cost: 3750
+Combo damage:   967.576
+
+Stormrazor build
+Cost: 3900
+Combo damage:   1015.1
+
+ */

@@ -19,6 +19,10 @@ public:
         cooldownLeft=ChampionSkill::onHit&&(usageTimeLeft>0||(cooldownLeft==0&&ChampionSkill::ability))?15*Skill::TicksPerSecond/10:cooldownLeft;
         usageTimeLeft=ChampionSkill::onHit?0:(ChampionSkill::ability&&(usageTimeLeft>0||cooldownLeft==0))?10*Skill::TicksPerSecond:usageTimeLeft;
     }
+    static void reset(){
+        cooldownLeft=0;
+        usageTimeLeft=0;
+    }
 
     class WaitTick:public ItemSkill<OffensiveChamp>{
     public:
@@ -40,7 +44,7 @@ public:
     using SkillType=TrinityForcePassive<OffensiveChamp>;
     template<ChampionConcept OffensiveChampion>
     using WaitTick = TrinityForcePassive<OffensiveChampion>::WaitTick;
-    template<ChampionConcept OffensiveChamp> static void reset(){}
+    template<ChampionConcept OffensiveChamp> static void reset(){SkillType<OffensiveChamp>::reset();}
 };
 template<> double TrinityForce::StatValue<AD>(){return 45;}
 template<> double TrinityForce::StatValue<AttackSpeed>(){return 33;}

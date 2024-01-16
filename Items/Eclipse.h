@@ -17,6 +17,10 @@ public:
         cooldownLeft=((ChampionSkill::onAttack||ChampionSkill::ability)&&(attacks==1))?6*Skill::TicksPerSecond:cooldownLeft>0?cooldownLeft-1:0;
         attacks=(ChampionSkill::onAttack||ChampionSkill::ability)?(cooldownLeft>0?0:attacks==1?0:1):attacks;
     }
+    static void reset(){
+        cooldownLeft=0;
+        attacks=0;
+    }
 
     class WaitTick:public ItemSkill<OffensiveChamp>{
     public:
@@ -37,7 +41,7 @@ public:
     using SkillType=EclipsePassive<OffensiveChamp>;
     template<ChampionConcept OffensiveChampion>
     using WaitTick=EclipsePassive<OffensiveChampion>::WaitTick;
-    template<ChampionConcept OffensiveChamp> static void reset(){}
+    template<ChampionConcept OffensiveChamp> static void reset(){SkillType<OffensiveChamp>::reset();}
 };
 template<> double Eclipse::StatValue<AD>(){return 70;}
 

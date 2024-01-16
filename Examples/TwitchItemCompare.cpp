@@ -45,3 +45,32 @@ int main(){
     test<Equipment4>();
     return 0;
 }
+
+/*
+Output:
+
+Kraken Slayer build
+Cost: 3800
+Attack Speed: 1.35474
+Damage after combo:     910.926
+Full Damage:            982.926
+
+BoTRK build
+Cost: 3650
+Attack Speed: 1.28684
+Damage after combo:     964.476
+Full Damage:            1036.48
+
+Infinity Edge build
+Cost: 3750
+Attack Speed: 1.11709
+Damage after combo:     898.252
+Full Damage:            970.252
+
+Nashor's Tooth build
+Cost: 3800
+Attack Speed: 1.45659
+Damage after combo:     796.35
+Full Damage:            1006.59
+
+ */

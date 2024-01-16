@@ -16,6 +16,7 @@ public:
         energize=(energize==100&&ChampionSkill::onAttack)?0:
         energize+ChampionSkill::onAttack*6+ChampionSkill::dashRange/24>100?100:energize+ChampionSkill::onAttack*6+ChampionSkill::dashRange/24;
     }
+    static void reset(){energize=100;}
 };
 template<ChampionConcept OffensiveChamp> int StormrazorPassive<OffensiveChamp>::energize=100;
 
@@ -25,7 +26,7 @@ public:
     template<StatConcept Stat> static double StatValue(){return Stat::baseValue;};
     template<ChampionConcept OffensiveChamp>
     using SkillType=StormrazorPassive<OffensiveChamp>;
-    template<ChampionConcept OffensiveChamp> static void reset(){}
+    template<ChampionConcept OffensiveChamp> static void reset(){SkillType<OffensiveChamp>::reset();}
 };
 template<> double Stormrazor::StatValue<AD>(){return 60;}
 template<> double Stormrazor::StatValue<AttackSpeed>(){return 15;}
