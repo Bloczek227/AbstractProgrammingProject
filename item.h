@@ -12,5 +12,4 @@ public:
     using WaitTick = ZeroSkill<OffensiveChampion>;
 };
 
-
 #endif //PA_PROJ_ITEM_H

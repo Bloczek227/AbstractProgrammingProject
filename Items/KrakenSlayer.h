@@ -12,8 +12,8 @@
 
 template<ChampionConcept OffensiveChamp>
 class KrakenSlayerPassive:public ItemSkill<OffensiveChamp>{
-    static int counter;
 public:
+    static int counter;
     template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
     static double TrueDamage(){return (counter==2&&(ChampionSkill::onHit||ChampionSkill::onAttack))*
                                       (calculateReluFunction(35,9,5,OffensiveChamp::lv)+0.65*OffensiveChamp::TotalAD()+0.6*OffensiveChamp::TotalAP())*

@@ -38,5 +38,4 @@ concept ItemConcept=requires{
     T::cost;
 };
 
-
 #endif //PA_PROJ_CONCEPTS_H

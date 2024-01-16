@@ -32,6 +32,9 @@ int main(){
     using Equipment4=Equipment<DoransBlade,YoumuusGhostblade,LongSword,LongSword>;
     using Equipment5=Equipment<DoransBlade,TheCollector,LongSword>;
     using Equipment6=Equipment<DoransBlade,EssenceReaver,LongSword>;
+    using Equipment7=Equipment<DoransBlade,Eclipse,LongSword>;
+    using Equipment8=Equipment<DoransBlade,UmbralGlave,LongSword,LongSword>;
+    using Equipment9=Equipment<DoransBlade,Stormrazor,LongSword>;
 
     std::cout<<"Kraken Slayer build"<<std::endl;
     test<Equipment1>();
@@ -45,5 +48,11 @@ int main(){
     test<Equipment5>();
     std::cout<<"Essence Reaver build"<<std::endl;
     test<Equipment6>();
+    std::cout<<"Eclipse build"<<std::endl;
+    test<Equipment7>();
+    std::cout<<"Umbral Glave build"<<std::endl;
+    test<Equipment8>();
+    std::cout<<"Stormrazor build"<<std::endl;
+    test<Equipment9>();
     return 0;
 }

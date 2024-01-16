@@ -19,6 +19,7 @@ public:
         cooldownLeft=ChampionSkill::onHit&&(usageTimeLeft>0||(cooldownLeft==0&&ChampionSkill::ability))?15*Skill::TicksPerSecond/10:cooldownLeft;
         usageTimeLeft=ChampionSkill::onHit?0:(ChampionSkill::ability&&(usageTimeLeft>0||cooldownLeft==0))?10*Skill::TicksPerSecond:usageTimeLeft;
     }
+
     class WaitTick:public ItemSkill<OffensiveChamp>{
     public:
         template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
