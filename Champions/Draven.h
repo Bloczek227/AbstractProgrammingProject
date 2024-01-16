@@ -17,16 +17,16 @@ public:
     static constexpr int EPoints=Points::EPoints;
     static constexpr int RPoints=Points::RPoints;
 
-    constexpr static double BaseADLv1=52;
-    constexpr static double ADGrowth=2.4;
-    constexpr static double BaseAttackSpeed=0.656;
-    constexpr static double AttackSpeedRatio=0.656;
-    constexpr static double AttackSpeedGrowth=3;
+    constexpr static double BaseADLv1=62;
+    constexpr static double ADGrowth=3.6;
+    constexpr static double BaseAttackSpeed=0.679;
+    constexpr static double AttackSpeedRatio=0.679;
+    constexpr static double AttackSpeedGrowth=2.7;
     constexpr static double BaseCriticalBonusDamage=75;
-    constexpr static double BaseHPLv1=640;
-    constexpr static double HPGrowth=103;
-    constexpr static double BaseArmorLv1=28;
-    constexpr static double ArmorGrowth=4.2;
+    constexpr static double BaseHPLv1=675;
+    constexpr static double HPGrowth=104;
+    constexpr static double BaseArmorLv1=29;
+    constexpr static double ArmorGrowth=4.5;
     constexpr static double BaseMRLv1=30;
     constexpr static double MRGrowth=1.3;
     constexpr static bool IsRanged=true;
