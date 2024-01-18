@@ -14,7 +14,8 @@ public:
     template<ChampionConcept DefendingChamp, ChampionSkillConcept ChampionSkill>
     static void use(){
         energize=(energize==100&&ChampionSkill::onAttack)?0:
-        energize+ChampionSkill::onAttack*6+ChampionSkill::dashRange/24>100?100:energize+ChampionSkill::onAttack*6+ChampionSkill::dashRange/24;
+        energize+ChampionSkill::onAttack*6+(ChampionSkill::dashRange/24>25?25:ChampionSkill::dashRange/24)>100?
+        100:energize+ChampionSkill::onAttack*6+(ChampionSkill::dashRange/24>25?25:ChampionSkill::dashRange/24);
     }
     static void reset(){energize=100;}
 };
